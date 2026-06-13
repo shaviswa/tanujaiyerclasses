@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master AP Physics with Tanuja Iyer</title>
+    <style>
+        :root {
+            --primary-blue: #0A2540;
+            --accent-gold: #D4AF37;
+            --whatsapp-green: #25D366;
+            --text-dark: #2D3748;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #EDF2F7;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* Flyer Container - Styled like a premium printed/digital flyer page */
+        .flyer-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: var(--primary-blue);
+            color: #FFFFFF;
+            padding: 45px 40px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: #E2E8F0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Layout Split */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        /* Course List and Bullet Styling */
+        .course-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .course-list li {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .method-list {
+            list-style: none;
+        }
+
+        .method-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .method-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .method-list strong {
+            color: var(--primary-blue);
+        }
+
+        /* Stats & Credentials Highlight Box (Sidebar) */
+        .sidebar {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px 25px;
+            height: fit-content;
+        }
+
+        .stat-box {
+            text-align: center;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .credential-item {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .credential-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Call To Action Footer */
+        .footer-cta {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-cta p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--whatsapp-green);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 15px 35px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Simple WhatsApp Icon Placeholder Vector */
+        .ws-icon {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flyer-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Master AP Physics with Tanuja Iyer</h1>
+            <p>Online Classes Starting Soon — Stay Ahead and Secure a 5/5</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-grid">
+            
+            <!-- Left Column: Course details & Methodology -->
+            <div class="main-content">
+                <div class="section">
+                    <h2>AP Tracks Offered</h2>
+                    <ul class="course-list">
+                        <li>AP Physics 1 & 2 <span style="font-weight:400; font-size:0.85rem; color:#718096; float:right;">Algebra-Based</span></li>
+                        <li>AP Physics C: Mechanics <span style="font-weight:400; font-size:0.85rem; color:#718096; float:right;">Calculus-Based</span></li>
+                        <li>AP Physics C: Electricity & Magnetism <span style="font-weight:400; font-size:0.85rem; color:#718096; float:right;">Calculus-Based</span></li>
+                    </ul>
+                    <p style="font-size: 0.9rem; color: #4A5568; margin-top: 12px; font-style: italic;">
+                        *Also providing elite academic support for US College Physics courses, Cambridge (CIE), and IB curricula.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>Why This Program Works</h2>
+                    <ul class="method-list">
+                        <li><strong>Core Concepts & Derivations:</strong> We don't just memorize formulas. Students learn foundational derivations to build true visual intuition.</li>
+                        <li><strong>Diverse Scenario Training:</strong> Exposure to a massive variety of challenging problem types ensures zero surprises on exam day.</li>
+                        <li><strong>Continuous Personal Attention:</strong> Progress is actively assessed throughout with highly personalized tracking.</li>
+                        <li><strong>School Test Alignment:</strong> Focused review sessions are built-in to protect and maintain ongoing school GPA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Brand Track Record & Credentials -->
+            <div class="sidebar">
+                <div class="stat-box">
+                    <span class="stat-number" style="color: var(--accent-gold);">4/5 or 5/5</span>
+                    <span class="stat-label">Scored by the vast majority of 500+ global students across US, UK, Europe, & Asia</span>
+                </div>
+
+                <h2>World-Class Pedigree</h2>
+                <div style="margin-top: 15px;">
+                    <div class="credential-item">
+                        <strong>M.Sc. Physics</strong><br><span style="color:#4A5568;">IIT Kanpur</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>M.Tech Laser Technology</strong><br><span style="color:#4A5568;">International School of Photonics, CUSAT</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>All India Rank 95</strong><br><span style="color:#4A5568;">GATE Physics national exam</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>One of the Top 25 National Ranks</strong><br><span style="color:#4A5568;">National Graduate Physics Exam (NGPE)</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>12+ Years Experience</strong><br><span style="color:#4A5568;">Specializing in College Board curricula</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call To Action Footer -->
+        <div class="footer-cta">
+            <p>Classes are forming now. Secure your spot directly via WhatsApp:</p>
+            <a href="https://wa.me/919845459422" class="whatsapp-btn" target="_blank">
+                <svg class="ws-icon" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.517 2.266 2.27 3.51 5.284 3.508 8.49-.006 6.66-5.347 11.999-11.957 11.999-2.005-.002-3.975-.497-5.728-1.44L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.528 2.022 14.062.996 11.453.996 6.016.996 1.593 5.367 1.59 10.795c-.002 1.684.448 3.33 1.302 4.767l-.999 3.648 3.755-.974zm13.14-5.172c-.308-.154-1.822-.9-2.101-.997-.279-.103-.483-.154-.686.154-.203.308-.787.997-.965 1.201-.177.203-.355.23-.663.077-1.129-.565-1.928-1.01-2.698-2.33-.2-.343.2-.319.574-1.07.103-.205.052-.385-.026-.54-.077-.154-.686-1.651-.94-2.26-.247-.594-.499-.512-.686-.522-.177-.01-.38-.01-.583-.01-.203 0-.534.077-.813.385-.279.308-1.067 1.043-1.067 2.544 0 1.502 1.093 2.951 1.246 3.157.152.204 2.149 3.282 5.207 4.601.727.314 1.294.502 1.738.643.73.232 1.396.199 1.922.12.586-.087 1.822-.746 2.076-1.467.254-.722.254-1.341.177-1.468-.076-.127-.279-.203-.586-.358z"/>
+                </svg>
+                WhatsApp: +91 98454 59422
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
